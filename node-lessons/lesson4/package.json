@@ -1,0 +1,12 @@
+{
+  "name": "lesson4",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "async": "^1.5.0",
+    "cheerio": "^0.19.0",
+    "eventproxy": "^0.3.4",
+    "express": "^4.13.3",
+    "superagent": "^1.4.0"
+  }
+}

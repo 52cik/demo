@@ -1,0 +1,10 @@
+{
+  "name": "lesson3",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "express": "^4.13.3",
+    "superagent": "^1.4.0"
+  }
+}
