@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimal-ui">
+    <title>「翻翻看」考研你的瞬间记忆！你是金鱼人么？</title>
+    <link rel="stylesheet" href="assets/css/main.min.css">
+</head>
+<body>
+    <div class="game">
+        <div id="js-gameready" class="page page-gameready">
+            <div class="hd">
+                <div class="logo"><img src="assets/img/logo.png" alt="logo"></div>
+            </div>
+            <button id="js-btn-start" class="btn-start">开始</button>
+        </div>
+        <div id="js-gamein" class="page page-gamein">
+            <div class="hd meta clearfix">
+                <div class="item-score"><i class="icon-score"></i> <span id="js-score" class="score">0</span></div>
+                <div class="item-time"><i class="icon-time"></i> <span id="js-time" class="time">01:00</span></div>
+                <div id="js-grids" class="grids">
+                    <ul class="list">
+                        <li class="item-card" data-type="1">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                        <li class="item-card" data-type="2">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                        <li class="item-card" data-type="2">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                        <li class="item-card" data-type="1">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="js-gameover" class="page page-gameover">
+            <div class="inner">
+                <p class="item-score">
+                    恭喜您获得<span id="js-gameover-score" class="score">60</span>分<br>
+                    击败了全国<span class="percent"><em id="js-gameover-percent" class="x-percent">80</em>%</span>的人
+                </p>
+                <button id="js-btn-again" class="btn btn-again">再玩一次</button>
+                <!--a href="###" id="js-btn-more" class="btn btn-more" target="_blank" style="display:none">更多游戏</a-->
+            </div>
+            <i class="share-tips"></i>
+        </div>
+        <div id="js-timeout" class="page page-timeout">
+            <div class="text">时间到</div>
+        </div>
+        <div id="js-loading" class="page page-loading">
+            <div class="loading-text">正在加载...（<span id="js-percent">1</span>%）</div>
+        </div>
+    </div>
+    <script src="assets/vendor/libs.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+</body>
+</html>

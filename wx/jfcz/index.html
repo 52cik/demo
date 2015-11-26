@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>见缝插针</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<style type="text/css">
+	body{overflow:hidden;margin:0;padding:0;background-color:#c8c8c8;font-family:Lato}
+	.center-box{position:absolute;top:57%;left:50%;margin:-200px 0 0 -150px;width:300px;height:400px;text-align:center}
+	.title{font-size:50px}
+	.button{position:absolute;top:59%;left:48%;margin:-100px 0 0 -75px;width:159px;border:2px solid #fd3207;color:#fd3207;font-size:27px}
+	.button .text{padding:0 10px;width:80px;font-size:10px}
+	.tips{position:absolute;top:27%;left:100px;margin:-50px 0 0 -100px;width:300px;height:63px}
+	.wx{position:absolute;top:92%;left:100px;margin:-50px 0 0 -100px;width:300px;height:24px}
+	.ad{position:absolute;top:100%;left:100px;margin:-50px 0 0 -100px;width:300px;height:40px}
+	a{text-decoration:none}
+	.lee_button1{position:absolute;top:85%;left:48%;z-index:999;display:block;margin:-100px 0 0 -75px;width:160px;height:37px;border:1px solid #fd3207;color:#666;font-size:17px;line-height:37px}
+	.lee_button2{position:absolute;top:98%;left:48%;display:block;margin:-100px 0 0 -75px;width:160px;height:37px;border:1px solid #0e0e0e;color:#242424;font-size:17px;line-height:37px}
+	.lee_button3{position:absolute;top:72%;left:48%;z-index:999;display:block;margin:-100px 0 0 -75px;width:160px;height:37px;border:1px solid #0e0e0e;color:#242424;font-size:18px;line-height:37px}
+	.ad_lee{position:absolute;top:0;z-index:0;z-index:9999;display:block;width:100%;height:40px;background:#666 none repeat scroll 0 0;color:#fff;line-height:40px;opacity:.6}
+	#lvnew{position:absolute;top:85%;left:48%;margin:-100px 0 0 -40px}
+	.tip{position:absolute;top:98%;left:100px;margin:-50px 0 0 -100px;width:300px;height:24px}
+	.adtop{overflow:hidden;width:100%}
+	.txta{margin-bottom:1px;width:100%;height:30px;background-color:#000;color:#FFF;text-align:center;line-height:30px}
+	.txta a{color:red;text-decoration:none;font-size:15px}
+	body {_background-image:url(about:blank);/*text.txt防抖*//* for IE6 */_background-attachment:fixed; 
+	</style>
+</head>
+<body>
+<div id="wx_pic" style="display:none"><img src="logo.jpg"></div>
+<canvas id="stage" style="display:none"></canvas>
+<div id="begin">
+	<section class="center-box">
+		<span class="title">见缝插针</span>
+		<div class="tips"><span style="color:#666">{玩法:点击屏幕发射针头}</span></div>
+		<div class="text" style="font-size:40px;color:#242424;margin-top:20px"></div>
+		<div class="button"><div id="txtAr" >开始</div></div>
+		<!--a class="lee_button3" href='###'>排行榜</a-->
+		<a href="javascript:;" name="btnFW" class="lee_button1" id="btnFW"><font color="red" >炫耀一下</font></a>
+		<a ontouchstart="document.getElementById('lvnew').style.display='block';return false;" class="lee_button2">重头再来</a>
+		<div id="lvnew" style="font-size:14px;color:#555;margin-top: 10px;display:none;">
+			<span id="btnReset" ontouchstart="document.getElementById('lvnew').style.display='none';return false;">确定</span>
+			<a ontouchstart="document.getElementById('lvnew').style.display='none';return false;" style="display:inline-block;margin-left:30px;color:#666" class="btn_lee">取消</a>
+			<div id="tip" style="font-size:14px;color:#555;margin-top: 15px;display:none;"></div>
+		</div>
+		<!-- <div class="wx">
+			<a ontouchstart="window.location.href='http://mp.weixin.qq.com/s?__biz=MzAxNzAyNDgwMA==&mid=206554213&idx=5&sn=4b4c287727270f23781453e0b73b3d5f#rd'"><font color="red"><span style="background-color:#555;font-size:21px;"><strong>&gt;&gt;&gt; 更多更好玩游戏 &lt;&lt;&lt;</strong></span></font></a>
+		</div> -->
+		<!--<div class="ad">
+			<div class="tipss" ><font color="#666">如果无法正常游戏，请点击左上角“原网页”即可进入原版网页</font></div>
+		</div> -->
+	</section>
+	<section id="wxArrow" style="display:none;">
+		<div style="position:absolute;width:100%;height:100%;opacity: 0.7;background-color:#000">
+		</div>
+		<img style="position: absolute;right:25px;" src="arrow.png">
+	</section>
+</div>
+<script src="http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="index.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#txtAr").text("开始");
+	$("#btnFW").click(function(){$("#wxArrow").show()});
+});
+</script>
+</body>
+</html>
