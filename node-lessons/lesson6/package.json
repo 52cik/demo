@@ -1,0 +1,11 @@
+{
+  "name": "lesson6",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "should": "^7.1.1"
+  }
+}

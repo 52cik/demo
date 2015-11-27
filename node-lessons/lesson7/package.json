@@ -1,0 +1,13 @@
+{
+  "name": "lesson7",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "init": "mocha init vendor",
+    "test": "mocha-phantomjs vendor/index.html --ssl-protocol=any --ignore-ssl-errors=true"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "mocha-phantomjs": "^4.0.1"
+  }
+}

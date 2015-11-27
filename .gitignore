@@ -12,3 +12,6 @@ Desktop.ini
 
 # webstorm
 .idea
+
+# istanbul
+coverage

@@ -1,0 +1,16 @@
+{
+  "name": "lesson8",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "should": "^7.1.1",
+    "supertest": "^1.1.0"
+  }
+}
