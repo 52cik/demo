@@ -1,0 +1,8 @@
+{
+  "name": "lesson10",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "benchmark": "^1.0.0"
+  }
+}
