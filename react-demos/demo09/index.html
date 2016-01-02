@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>状态机 - 表单操作</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+	<script type="text/babel">
+	let Input = React.createClass({
+		getInitialState () {
+			return {value: 'Hello'};
+		},
+		handleChange (e) {
+			this.setState({value: e.target.value});
+		},
+		render () {
+			let value = this.state.value;
+			return (
+				<div>
+					<input type="text" value={value} onChange={this.handleChange} />
+					<p>{value}</p>
+				</div>
+			)
+		}
+	});
+
+	ReactDOM.render(
+		<Input />,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>

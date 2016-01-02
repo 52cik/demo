@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>组件的生命周期</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+	<script type="text/babel">
+	let Timer = React.createClass({
+		getInitialState () {
+			return {secondsElapsed: 0};
+		},
+		tick () {
+			this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+		},
+		componentDidMount () {
+			this.interval = setInterval(this.tick, 1000);
+		},
+		componentWillUnmount () {
+			clearInterval(this.interval);
+		},
+		render () {
+			return <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
+		}
+	});
+
+	ReactDOM.render(
+		<Timer />,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/babel">
+	let UserGist = React.createClass({
+		getInitialState () {
+			return {
+				username: '', 
+				lastGistUrl:''
+			};
+		},
+		getUserInfo (result) {
+			let lastGist = result[0];
+			if (this.isMounted()) {
+				this.setState({
+					username: lastGist.owner.login,
+					lastGistUrl: lastGist.html_url
+				});
+			}
+		},
+		componentDidMount () {
+			$.get(this.props.source, this.getUserInfo);
+		},
+		render () {
+			if (this.state.username !== '') {
+				return <div>{this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>.</div>
+			}
+			return <div>Please wait a moment.</div>
+		}
+	});
+
+	ReactDOM.render(
+		<UserGist source="https://api.github.com/users/octocat/gists" />,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>
