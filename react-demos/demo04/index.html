@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>定义一个组件</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+	<script type="text/babel">
+	let HelloMessage = React.createClass({
+		render () {
+			return <h1>Hello {this.props.name}!</h1>
+		}
+	});
+
+	ReactDOM.render(
+		<HelloMessage name="教主" />,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>

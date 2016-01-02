@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>组件子节点处理</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+	<script type="text/babel">
+	let NodeList = React.createClass({
+		render () {
+			return (
+				<ol>
+					{React.Children.map(this.props.children, child => <li>{child}</li>)}
+				</ol>
+			)
+		}
+	});
+
+	ReactDOM.render(
+		<NodeList>
+			<span>hello</span>
+			<span>world</span>
+		</NodeList>,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>
