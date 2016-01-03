@@ -15,6 +15,9 @@
 1. [状态机 - 表单操作](https://52cik.github.io/demo/react-demos/demo09/index.html)
 1. [组件的生命周期](https://52cik.github.io/demo/react-demos/demo10/index.html)
 1. [ajax](https://52cik.github.io/demo/react-demos/demo11/index.html)
+1. [ajax - 抓取github项目列表](https://52cik.github.io/demo/react-demos/demo12/index.html)
+1. -
+1. [练习1 - TODO APP](https://52cik.github.io/demo/react-demos/demo14/index.html)
 
 [1]: http://www.ruanyifeng.com/blog/2015/03/react.html "React 入门实例教程"
 [2]: https://github.com/ruanyf/react-demos "a collection of simple demos of React.js"
