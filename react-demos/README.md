@@ -4,6 +4,7 @@
 
 
 ## 目录
+
 1. [渲染 jsx](https://52cik.github.io/demo/react-demos/demo01/index.html)
 1. [在 jsx 中使用 js](https://52cik.github.io/demo/react-demos/demo02/index.html)
 1. [在 jsx 中使用 js 数组](https://52cik.github.io/demo/react-demos/demo03/index.html)
@@ -16,8 +17,9 @@
 1. [组件的生命周期](https://52cik.github.io/demo/react-demos/demo10/index.html)
 1. [ajax](https://52cik.github.io/demo/react-demos/demo11/index.html)
 1. [ajax - 抓取github项目列表](https://52cik.github.io/demo/react-demos/demo12/index.html)
-1. -
+1. [服务端渲染](./demo13)
 1. [练习1 - TODO APP](https://52cik.github.io/demo/react-demos/demo14/index.html)
+
 
 [1]: http://www.ruanyifeng.com/blog/2015/03/react.html "React 入门实例教程"
 [2]: https://github.com/ruanyf/react-demos "a collection of simple demos of React.js"
