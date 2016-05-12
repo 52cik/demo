@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo05</title>
+</head>
+<body>
+
+<div id="app">
+  <my-component></my-component>
+  <hr>
+  <Parent></Parent>
+  <hr>
+  <Test></Test>
+</div>
+
+<div id="list">
+  <my-list></my-list>
+</div>
+
+<hr>
+内容发布
+<hr>
+<div id="slot">
+  <app>
+    <h1>我是app内容</h1>
+    <app-header>我是header内容</app-header>
+    <app-footer>我是footer内容</app-footer>
+  </app>
+</div>
+
+
+<a href="props.html">props.html</a>
+<a href="events.html">events.html</a>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

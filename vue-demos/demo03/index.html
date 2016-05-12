@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo03</title>
+</head>
+<body>
+
+<div id="app">
+
+  <form action="">
+    <label>
+      <input type="checkbox" value="Jack" v-model="checkedNames">
+      Jack
+    </label>
+    <label>
+      <input type="checkbox" value="John" v-model="checkedNames">
+      John
+    </label>
+    <label>
+      <input type="checkbox" value="Mike" v-model="checkedNames">
+      Mike
+    </label>
+
+    <p>选择了: {{checkedNames}}</p>
+
+    <hr>
+
+    <label>
+      <input type="radio" value="One" v-model="picked">
+      One
+    </label>
+      <input type="radio" value="Two" v-model="picked">
+      Two
+    </label>
+    <p>Picked: {{ picked }}</p>
+
+    <hr>
+
+    <select v-model="selected">
+      <option selected>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <p>Selected: {{ selected }}</p>
+
+    <hr>
+
+    <select v-model="selected02">
+      <option v-for="option in options02" v-bind:value="option.value">
+        {{ option.text }}
+      </option>
+    </select>
+    <span>Selected: {{ selected02 }}</span>
+
+
+    <hr>
+
+    <input
+      type="checkbox"
+      v-model="toggleValue"
+      v-bind:true-value="a"
+      v-bind:false-value="b"> toggle-{{toggleValue}}
+  </form>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

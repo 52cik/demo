@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo05</title>
+</head>
+<body>
+
+<div id="app">
+  <input v-model="parentMsg">
+  <br>
+  <child v-bind:my-message="parentMsg" some-prop1="1" :some-prop2="2"></child>
+</div>
+
+<hr>
+<div id="app2">
+  <child some-prop1="1" :some-prop2="2" :some-prop3="33"></child>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="props.js"></script>
+</body>
+</html>

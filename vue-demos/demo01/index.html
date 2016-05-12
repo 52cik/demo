@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo01</title>
+</head>
+<body>
+
+<div id="app">
+  <input type="text" v-model="message">
+  <h1>{{message}}</h1>
+
+  <input type="button" value="倒叙" v-on:click="order">
+  <ul>
+    <li v-for="it in todos">
+      <span>{{it.text}}</span> - <span v-on:click="removeItem($index)">X</span>
+    </li>
+  </ul>
+
+  <input type="text" v-model="itemText" v-on:keyup.enter="addItem">
+  <input type="button" value="添加项目" v-on:click="addItem">
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

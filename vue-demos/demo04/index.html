@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo04</title>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/animate.css/3.1.0/animate.css">
+</head>
+<body>
+
+<style>
+*{padding:0;margin:0;}
+/* 必需 */
+.expand-transition {
+  transition: all .3s ease;
+  height: 30px;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
+}
+
+.animated {
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #eee;
+}
+
+.list {}
+.list li {background-color: #efefef;padding: 10px;}
+
+</style>
+
+<div id="app">
+  <button @click="show = !show">Toggle</button>
+  <div v-show="show" transition="expand">hello</div>
+  <div v-show="show" :transition="transitionName">hello</div>
+
+  <hr>
+
+  <button @click="animate_css = !animate_css">Toggle</button>
+  <div v-show="animate_css" class="animated" transition="bounce">Watch me bounce</div>
+  <div v-show="animate_css" class="animated" transition="fade">Watch me fade</div>
+</div>
+
+<div id="list">
+  搜索：<input v-model="query" placeholder="输入 1 试试.">
+  <ul class="list">
+    <li v-for="it of list | filterBy query" class="animated" transition="fade" stagger="100">
+      {{it.text}}
+    </li>
+  </ul>
+
+  <ul class="list">
+    <li v-for="it of list | filterBy query" class="animated" transition="staggered" stagger="100">
+      {{it.text}}
+    </li>
+  </ul>
+  <style>
+  ul {
+      padding-left: 0;
+      font-family: Helvetica, Arial, sans-serif;
+  }
+  .staggered-transition {
+      transition: all .5s ease;
+      overflow: hidden;
+      margin: 0;
+      height: 20px;
+  }
+  .staggered-enter, .staggered-leave {
+      opacity: 0;
+      height: 0;
+  }
+  </style>
+</div>
+
+<div id="list2">
+  搜索：<input v-model="query" placeholder="输入 1 试试.">
+  <ul class="list">
+    <li v-for="it of list | filterBy query" class="" transition="staggered" stagger="100">
+      {{it.text}}
+    </li>
+  </ul>
+  <style>
+  ul {
+      padding-left: 0;
+      font-family: Helvetica, Arial, sans-serif;
+  }
+  .staggered-transition {
+      transition: all .5s ease;
+      overflow: hidden;
+      margin: 0;
+      height: 20px;
+  }
+  .staggered-enter, .staggered-leave {
+      opacity: 0;
+      height: 0;
+  }
+  </style>
+</div>
+
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
