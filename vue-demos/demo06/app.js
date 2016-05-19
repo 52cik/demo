@@ -1,11 +1,10 @@
 Vue.component('home', {
   template: '<p>home page</p>'
 });
+
 Vue.component('list', {
   template: '<p>list page</p>'
 });
-
-Vue.use(VueRouter);
 
 var app = new Vue({
   el: '#app',
@@ -15,10 +14,11 @@ var app = new Vue({
 });
 
 
-// window.addEventListener('hashchange', function(e) {
-//   var hash = location.hash.slice(2);
-//   if (Vue.options.components[hash]) {
-//     app.currentView = hash;
-//   }
-// }, false);
+// 简单路由测试
+window.addEventListener('hashchange', function(e) {
+  var hash = location.hash.slice(2);
+  if (Vue.options.components[hash]) {
+    app.currentView = hash;
+  }
+}, false);
 

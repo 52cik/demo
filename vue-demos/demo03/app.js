@@ -11,13 +11,9 @@ var app = new Vue({
       { text: 'Two', value: 'B' },
       { text: 'Three', value: 'C' }
     ],
+
     toggleValue: '111',
-    a:'111',
-    b:'222',
-  },
-  methods: {
-    click: function () {
-      console.log(arguments);
-    }
-  },
+    toggleValueA: '111',
+    toggleValueB: '222'
+  }
 });

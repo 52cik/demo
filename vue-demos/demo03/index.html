@@ -59,13 +59,12 @@
     <input
       type="checkbox"
       v-model="toggleValue"
-      v-bind:true-value="a"
-      v-bind:false-value="b"> toggle-{{toggleValue}}
+      v-bind:true-value="toggleValueA"
+      v-bind:false-value="toggleValueB"> toggle-{{toggleValue}}
   </form>
 </div>
 
-<script src="../node_modules/vue/dist/vue.js"></script>
-<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="../assets/vue.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

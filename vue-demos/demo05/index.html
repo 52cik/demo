@@ -6,7 +6,15 @@
 </head>
 <body>
 
+<p>
+  <a href="props.html">props.html</a>
+  <a href="events.html">events.html</a>
+</p>
+
+<hr>
+
 <div id="app">
+  <h2>组件使用</h2>
   <my-component></my-component>
   <hr>
   <Parent></Parent>
@@ -14,27 +22,30 @@
   <Test></Test>
 </div>
 
+<hr>
+
 <div id="list">
+  <h2>列表组件测试</h2>
   <my-list></my-list>
+  <my-list2></my-list2>
 </div>
 
+<template id="tpl-ul">
+  <ul><my-li v-for="n in 3">{{n}}</my-li></ul>
+</template>
+
 <hr>
-内容发布
-<hr>
+
 <div id="slot">
+  <h2>内容发布</h2>
   <app>
-    <h1>我是app内容</h1>
+    <h3>我是app内容</h3>
     <app-header>我是header内容</app-header>
     <app-footer>我是footer内容</app-footer>
   </app>
 </div>
 
-
-<a href="props.html">props.html</a>
-<a href="events.html">events.html</a>
-
-<script src="../node_modules/vue/dist/vue.js"></script>
-<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="../assets/vue.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

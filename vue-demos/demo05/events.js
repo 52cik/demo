@@ -1,25 +1,29 @@
 new Vue({
   el: '#app', // root 节点
+
   data: { // 数据
     messages: [],
   },
+
   events: { // 监听事件
     'child-msg': function(msg) {
       this.messages.push(msg);
     }
   },
+
   methods: { // 方法
     notify: function () {
       this.$broadcast('parent-msg', 'test'); // 广播事件，事件向下传导给所有的后代。
-      console.log('子组件:', this.$refs.profile);
+      console.log('子组件:', this.$refs.profile); // 访问子组件
     },
     handleIt: function (msg) { // 声明式绑定监听事件，优先级高
       console.log('子节点:', msg);
       return true; // 允许冒泡，绑定的多个事件都触发
     }
   },
+
   components: { // 子组件
-    child: {
+    Child: {
       template: '<input v-model="msg"><button v-on:click="notify">Dispatch Event</button>',
       data: function () { // 数据
         return { msg: 'hello' };

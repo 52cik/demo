@@ -7,22 +7,25 @@
 <body>
 
 <div id="app">
-  <input type="text" v-model="message">
   <h1>{{message}}</h1>
+  <input type="text" v-model="message">
 
+  <hr>
+
+  添加：<input type="text" v-model="itemText" v-on:keyup.enter="addItem" placeholder="按回车添加">
+  <br>
+  搜索：<input type="text" v-model="query" placeholder="虽然关键词">
+  <br>
   <input type="button" value="倒叙" v-on:click="order">
+
   <ul>
-    <li v-for="it in todos">
-      <span>{{it.text}}</span> - <span v-on:click="removeItem($index)">X</span>
+    <li v-for="it in todos | filterBy query">
+      <span>{{it.text}}</span> - <span v-on:click="removeItem($index)">x</span>
     </li>
   </ul>
-
-  <input type="text" v-model="itemText" v-on:keyup.enter="addItem">
-  <input type="button" value="添加项目" v-on:click="addItem">
 </div>
 
-<script src="../node_modules/vue/dist/vue.js"></script>
-<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="../assets/vue.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

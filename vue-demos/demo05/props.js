@@ -14,9 +14,11 @@
 
 new Vue({
   el: '#app',
+
   data: {
     parentMsg: 'hehe'
   },
+
   components: {
     child: {
       props: [
@@ -32,6 +34,7 @@ new Vue({
 
 new Vue({
   el: '#app2',
+
   components: {
     child: {
       props: {

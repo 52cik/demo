@@ -57,6 +57,7 @@ var list = new Vue({
     },
   }
 });
+
 var list2 = new Vue({
   el: '#list2',
   data: {
