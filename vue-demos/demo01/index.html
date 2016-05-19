@@ -16,7 +16,7 @@
   <br>
   搜索：<input type="text" v-model="query" placeholder="虽然关键词">
   <br>
-  <input type="button" value="倒叙" v-on:click="order">
+  <input type="button" value="倒序排列" v-on:click="order">
 
   <ul>
     <li v-for="it in todos | filterBy query">
