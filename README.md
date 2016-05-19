@@ -9,6 +9,10 @@
 [阮一峰 的《React 入门实例教程》练习](react-demos)
 
 
+## Vue 学习笔记
+[跟着 vue 官网教程做的练习](vue-demos)
+
+
 ## 微信小游戏
 
 [翻翻看](https://52cik.github.io/demo/wx/ffk)
