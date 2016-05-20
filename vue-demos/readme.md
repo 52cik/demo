@@ -8,3 +8,4 @@
 4. [过度效果](https://52cik.github.io/demo/vue-demos/demo04/index.html)
 5. [组件应用](https://52cik.github.io/demo/vue-demos/demo05/index.html)
 6. [组件+路由](https://52cik.github.io/demo/vue-demos/demo06/index.html)
+7. [组件化开发](demo07)
