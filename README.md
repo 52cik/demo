@@ -15,5 +15,11 @@
 
 ## 微信小游戏
 
-[翻翻看](https://52cik.github.io/demo/wx/ffk)
-[见缝插针](https://52cik.github.io/demo/wx/jfcz)
+[翻翻看](https://52cik.github.io/demo/wx/ffk/)
+[见缝插针](https://52cik.github.io/demo/wx/jfcz/)
+
+
+
+## 效果练习
+
+[歌词同步](https://52cik.github.io/demo/lrc-sync/)

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>歌词同步demo</title>
+  <style>
+  #lyrics{overflow-x:auto;padding:20px;width:260px;height:240px;border-radius:5px;background-color:#434343;color:#fff;text-align:center;line-height:28px;}
+  #lyrics ul{margin:0;padding:10px 0;list-style:none;}
+  #lyrics li{}
+  #lyrics .current{color:#f5a433;}
+  </style>
+</head>
+<body>
+
+<audio id="player" src="http://other.web.re03.sycdn.kuwo.cn/b6b1b09bcc03260e8ac24ecdc3c6c026/5745d24f/resource/a2/73/48/3467147492.aac" controls autoplay loop></audio>
+<div id="lyrics">
+  <ul></ul>
+</div>
+
+<p>歌曲源: 酷我音乐</p>
+<p>歌词源: 百度音乐</p>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+let ul = $('#lyrics>ul')[0];
+let li = ul.children;
+let rows = []; // 歌词
+
+$.get('https://ss1.baidu.com/6Ls1aze90MgYm2Gp8IqW0jdnxx1xbK/v1/restserver/ting?method=baidu.ting.song.lry&fromat=jsonp&songid=87967607', (data) => {
+  data.lrcContent.replace(/\[(\d+):(\d+)\.(\d+)\]([^\n]*)/g, (all, m,s,ms,txt) => {
+    rows.push({
+      time: m*60*100 + s*100 + +ms, // 转为时间，因为歌词是 [01:37.79] 不是毫秒，所以对应歌词时间没有转为毫秒
+      text: txt // 歌词内容
+    });
+
+    $('<li>', {html: txt || '&nbsp;'}).appendTo(ul);
+  });
+}, 'jsonp');
+
+
+let currentIndex = 0; // 当前显示行号
+setInterval(() => {
+  let currentTime = player.currentTime * 100 | 0;
+
+  for (let i = 0, l = rows.length; i < l; i++) {
+    // console.log(rows[i].time , currentTime)
+    if (rows[i].time > currentTime) {
+      if (currentIndex === i - 1) { // 防止重复渲染
+        break;
+      }
+
+      currentIndex = i - 1; // 当前行号
+
+      if (currentIndex > 5) {
+        scrollTop = 28 * (currentIndex - 5); // 第6行开始滚动
+      } else {
+        scrollTop = 0;
+      }
+
+      $(lyrics).animate({scrollTop: scrollTop});
+      $(li).removeClass('current').eq(currentIndex).addClass('current');
+      break;
+    }
+  }
+}, 100);
+</script>
+</body>
+</html>
