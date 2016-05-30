@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>歌词同步demo</title>
   <style>
-  #lyrics{overflow-x:auto;padding:20px;width:260px;height:240px;border-radius:5px;background-color:#434343;color:#fff;text-align:center;line-height:28px;}
+  #lyrics{overflow:hidden;padding:20px;width:260px;height:240px;border-radius:5px;background-color:#434343;color:#fff;text-align:center;line-height:28px;}
   #lyrics ul{margin:0;padding:10px 0;list-style:none;}
   #lyrics li{}
   #lyrics .current{color:#f5a433;}
@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<audio id="player" src="http://other.web.re03.sycdn.kuwo.cn/b6b1b09bcc03260e8ac24ecdc3c6c026/5745d24f/resource/a2/73/48/3467147492.aac" controls autoplay loop></audio>
+<audio id="player" src="http://ip.h5.re03.sycdn.kuwo.cn/bb054b2d4c5f25045559b5b90ea98359/574c5b93/resource/a2/19/83/2571677515.aac" controls autoplay loop></audio>
 <div id="lyrics">
   <ul></ul>
 </div>
@@ -37,9 +37,9 @@ $.get('https://ss1.baidu.com/6Ls1aze90MgYm2Gp8IqW0jdnxx1xbK/v1/restserver/ting?m
   });
 }, 'jsonp');
 
-
 let currentIndex = 0; // 当前显示行号
-setInterval(() => {
+
+player.addEventListener('timeupdate', () => {
   let currentTime = player.currentTime * 100 | 0;
 
   for (let i = 0, l = rows.length; i < l; i++) {
@@ -57,12 +57,13 @@ setInterval(() => {
         scrollTop = 0;
       }
 
-      $(lyrics).animate({scrollTop: scrollTop});
+      $(lyrics).stop(true).animate({scrollTop: scrollTop});
       $(li).removeClass('current').eq(currentIndex).addClass('current');
       break;
     }
   }
-}, 100);
+}, false);
+
 </script>
 </body>
 </html>
