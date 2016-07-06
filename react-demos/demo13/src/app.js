@@ -1,25 +1,25 @@
-import React from 'react';
+import React from 'react'
 
 export default class App extends React.Component {
 
   constructor (props) {
-    super(props);
+    super(props)
 
-    this.render = this.render.bind(this);
+    this.render = this.render.bind(this)
     this.state = {
       items: this.props.items,
       disabled: true
-    };
+    }
   }
 
   componentDidMount () {
-    this.setState({disabled: false});
+    this.setState({disabled: false})
   }
 
   handleClick () {
     this.setState({
       items: this.state.items.concat('Item ' + this.state.items.length)
-    });
+    })
   }
 
   render () {

@@ -5,13 +5,16 @@
 	<title>PropTypes 属性验证</title>
 </head>
 <body>
+
 	<div id="example"></div>
 	<div id="example1"></div>
+
 	<script src="../build/react.js"></script>
 	<script src="../build/react-dom.js"></script>
 	<script src="../build/browser.min.js"></script>
+
 	<script type="text/babel">
-	let data = 123;
+	let data = 123
 
 	let MyTitle = React.createClass({
 		propTypes: {
@@ -23,19 +26,20 @@
 		getDefaultProps () {
 			return {title: 'Hello world!'}
 		}
-	});
+	})
 
 	// 会报类型错误，但是依然输出
 	ReactDOM.render(
 		<MyTitle title={data} />,
 		document.getElementById('example')
-	);
+	)
 
 	// 使用默认值
 	ReactDOM.render(
 		<MyTitle />,
 		document.getElementById('example1')
-	);
+	)
 	</script>
+
 </body>
 </html>

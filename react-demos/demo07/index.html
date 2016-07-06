@@ -5,30 +5,35 @@
 	<title>获取真实的DOM节点</title>
 </head>
 <body>
+
 	<div id="example"></div>
+
 	<script src="../build/react.js"></script>
 	<script src="../build/react-dom.js"></script>
 	<script src="../build/browser.min.js"></script>
+
 	<script type="text/babel">
 	let MyComponent = React.createClass({
 		handleClick () {
-			this.refs.myTextInput.value = 'test';
-			this.refs.myTextInput.focus();
+			this.refs.myTextInput.value = 'test'
+			this.refs.myTextInput.focus()
 		},
+
 		render () {
 			return (
 				<div>
 					<input type="text" ref="myTextInput" />
 					<input type="button" value="Focus the text input" onClick={this.handleClick} />
 				</div>
-			);
+			)
 		}
-	});
+	})
 
 	ReactDOM.render(
 		<MyComponent />,
 		document.getElementById('example')
-	);
+	)
 	</script>
+
 </body>
 </html>

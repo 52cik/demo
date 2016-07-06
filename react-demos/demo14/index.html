@@ -5,11 +5,14 @@
 	<title>练习1 - TODO APP</title>
 </head>
 <body>
+
 	<div id="example"></div>
+
 	<script src="../build/react.js"></script>
 	<script src="../build/react-dom.js"></script>
 	<script src="../build/browser.min.js"></script>
 	<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+
 	<script type="text/babel">
 	let TodoList = React.createClass({
 		renderList (item) {
@@ -18,7 +21,7 @@
 		render () {
 			return <ul>{this.props.items.map(this.renderList)}</ul>
 		}
-	});
+	})
 
 	let TodoApp = React.createClass({
 		getInitialState () {
@@ -42,12 +45,13 @@
 				</div>
 			)
 		}
-	});
+	})
 
 	ReactDOM.render(
 		<TodoApp />,
 		document.getElementById('example')
-	);
+	)
 	</script>
+
 </body>
 </html>

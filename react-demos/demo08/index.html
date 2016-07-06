@@ -5,32 +5,38 @@
 	<title>状态机</title>
 </head>
 <body>
+
 	<div id="example"></div>
+
 	<script src="../build/react.js"></script>
 	<script src="../build/react-dom.js"></script>
 	<script src="../build/browser.min.js"></script>
+
 	<script type="text/babel">
 	let LikeButton = React.createClass({
 		getInitialState () {
 			return {liked: false}
 		},
+
 		handleClick () {
-			this.setState({liked: !this.state.liked});
+			this.setState({liked: !this.state.liked})
 		},
+
 		render () {
-			let text = this.state.liked ? 'like' : 'haven\'t liked';
+			let text = this.state.liked ? 'like' : 'haven\'t liked'
 			return (
 				<p onClick={this.handleClick}>
 					You {text} this. Click to toggle.
 				</p>
-			);
+			)
 		}
-	});
+	})
 
 	ReactDOM.render(
 		<LikeButton />,
 		document.getElementById('example')
-	);
+	)
 	</script>
+
 </body>
 </html>

@@ -5,11 +5,14 @@
 	<title>ajax - 抓取github项目列表</title>
 </head>
 <body>
+
 	<div id="example"></div>
+
 	<script src="../build/react.js"></script>
 	<script src="../build/react-dom.js"></script>
 	<script src="../build/browser.min.js"></script>
 	<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+
 	<script type="text/babel">
 	let UserGist = React.createClass({
 		getInitialState () {
@@ -45,14 +48,15 @@
 					<h1>Most Popular JavaScript Projects in Github</h1>
 					<ol>{repoList}</ol>
 				</div>
-			);
+			)
 		}
-	});
+	})
 
 	ReactDOM.render(
 		<UserGist ajax={$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />,
 		document.getElementById('example')
-	);
+	)
 	</script>
+
 </body>
 </html>
