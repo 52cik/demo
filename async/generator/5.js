@@ -21,7 +21,7 @@ function add(a, b, cb){
   setTimeout(cb, 1000, a + b)
 }
 
-var add2 = thunk(add)
+let add2 = thunk(add)
 
 co(function* gen() {
   let r1 = yield add2(1, 2)
